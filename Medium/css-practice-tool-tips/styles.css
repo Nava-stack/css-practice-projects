@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Image Adding */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("https://picsum.photos/id/237/200/300");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+:root {
+  --scale: 0;
+  --tooltip-color: #000000dd;
+  --arrow-size: 7px;
+}
+
+/* Animating */
+.avatar::after,
+.avatar::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0))
+    scale(var(--scale));
+  top: -0.25rem;
+  transition: 150ms transform;
+  transform-origin: bottom center;
+}
+
+.avatar::before {
+  --translate-y: calc(-100% - var(--arrow-size));
+  content: attr(data-tooltip);
+  padding: 8px;
+  background-color: var(--tooltip-color);
+  color: white;
+  border-radius: 0.3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+/* Traingle */
+.avatar::after {
+  --translate-y: calc(-1 * var(--arrow-size));
+  content: "";
+  border: var(--arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  --scale: 1;
+}
