@@ -36,6 +36,9 @@ body {
 .image-wrapper > .image-overlay {
   transition: 200ms ease-in-out;
 }
+.image-wrapper:hover {
+  cursor: pointer;
+}
 
 /* TODO - Blur */
 .image-wrapper:hover > img.blur {
