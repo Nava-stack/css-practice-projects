@@ -1,26 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html,
 body {
   font-family: "Poppins", sans-serif;
-  display: grid;
-  margin: 0;
-  padding: 0;
+  min-width: 290px;
+  color: #4d4e53;
+  background-color: #ffffff;
   position: relative;
+  line-height: 1.5;
 }
 
-p {
-  text-align: justify;
-}
-
-h1 {
-  font-weight: 500;
-  font-size: 2rem;
-}
 #navbar {
+  top: 0px;
+  left: 0px;
   margin-right: 30px;
   height: 100vh;
-  overflow: scroll;
-  width: 350px;
+  min-width: 290px;
+  width: 300px;
   position: fixed;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+::-webkit-scrollbar {
+  width: 4px; /* Adjust the width as needed */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d4d2d2; /* Handle color */
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+p {
+  text-align: justify;
 }
 
 #navbar a {
@@ -28,27 +50,50 @@ h1 {
   text-decoration: none;
 }
 
-#navbar li > h1 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-#navbar ul {
-  list-style-type: none;
-}
-
-#navbar ul > li {
+#navbar li {
   padding: 10px;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #4d4e53;
+  color: #4d4e53;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
 }
 
-.main-section {
-  position: relative;
-  left: 400px;
-  width: 65%;
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
 }
 
 .main-section .code-me {
   background-color: rgb(237, 242, 229);
   padding: 5px;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+section article {
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+@media screen and (max-width: 800px) {
+  #navbar {
+    position: absolute;
+    height: 300px;
+    border: none;
+    width: 100%;
+  }
+  #navbar ul {
+    border: 2px solid #4d4e53;
+  }
+  #main-doc {
+    position: absolute;
+    top: 350px;
+    margin-left: 0px;
+  }
 }
