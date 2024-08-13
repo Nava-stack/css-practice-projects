@@ -40,6 +40,7 @@ body {
 }
 
 .price-column.popular {
+  position: relative;
   background-color: var(--accent-color);
   box-shadow: 0 7px 30px rgba(52, 13, 135, 0.3);
   color: white;
@@ -102,4 +103,60 @@ body {
 
 .price-column.popular .divider {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.feature img {
+  height: 1.1em;
+  width: 1.1em;
+  margin-right: 0.5rem;
+}
+
+.feature.inactive {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.most-popular {
+  position: absolute;
+  top: 0.5rem;
+  left: 8rem;
+  right: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--heading-font-family);
+  background-color: rgb(252, 235, 105);
+  border-radius: 2px;
+  color: rgb(236, 181, 28);
+  padding: 0.2em;
+}
+
+.cta {
+  background-color: var(--accent-color);
+  color: white;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 3rem;
+  transition: 100ms;
+  transform: scale(1);
+  text-transform: uppercase;
+}
+
+.price-column.popular .cta {
+  background-color: white;
+  color: var(--accent-color);
+}
+
+.cta:is(:hover, :focus) {
+  transform: scale(1.1);
 }
